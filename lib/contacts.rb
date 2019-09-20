@@ -19,7 +19,9 @@ def remove_strawberry(contacts)
     if name == "Freddy Mercury"
       data.each(){ |attribute, value| 
         if attribute == :favorite_ice_cream_flavors
-          :favorite_ice_cream_flavors.pop("strawberry")
+          value.delete_if() { |ice_cream| 
+            ice_cream == "strawberry"
+          }
         end
       end 
     }
