@@ -15,15 +15,15 @@ require 'pry'
   # }
   
 def remove_strawberry(contacts)
-  contacts.each(){ |name, data| 
-    if name == "Freddy Mercury"
-      data.each(){ |attribute, value| 
+  contacts.each(){ |person, contact_details_hash| 
+    if person == "Freddy Mercury"
+      contact_details_hash.each(){ |attribute, data| 
         if attribute == :favorite_ice_cream_flavors
-          value.delete_if{ |ice_cream| 
+          data.delete_if{ |ice_cream| 
             ice_cream == "strawberry"
           }
         end
-      end 
+      } 
     }
   }
 end
